@@ -124,3 +124,6 @@ Creating and Interacting with the Question Model:
 
 - updated questions index page to show all the questions created, and a form to make POST request to upload question and answer. (but 405 error at this stage)
 ==============================================================
+- To change the default method name (create_app) of flask app instance, set FLASK_APP=app:create__custom_app.
+
+==============================================================
