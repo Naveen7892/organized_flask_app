@@ -58,7 +58,16 @@ app\__init__.py registers the created blueprint with its routes.
 
 Notes: 
 - putting 'from app.main import routes' above "bp= BluePrint()" will cause circular import exception.
+
 ==============================================================
+Rendering with Templates:
+-------------------------
+
+imported render_template from flask. and returned rendered index.html
+
+index.html is defined in app\templates\index.html which uses base.html inside with "title block" and "content block"
+
+
 ==============================================================
 ==============================================================
 ==============================================================
