@@ -33,8 +33,18 @@ Creating a Configuration File:
 ------------------------------
 
 - create config.py file to create Config Class to set values from environment variable or default.
+- ActivatedConsole.bat file created for using activated venv with default env variables.
 
 ==============================================================
+Creating a Flask Application Factory:
+-------------------------------------
+
+app\__init__.py is created with create_app() method.
+
+env for FLASK_APP=app and FLASK_ENV=development is set.
+
+flask run
+
 ==============================================================
 ==============================================================
 ==============================================================
