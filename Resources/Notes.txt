@@ -46,6 +46,18 @@ env for FLASK_APP=app and FLASK_ENV=development is set.
 flask run
 
 ==============================================================
+Creating Flask Blueprints:
+--------------------------
+
+app\main\__init__.py created for "bp = Blueprint('main', __name__)"
+app\main\routes.py created for defining routes with @bp.route('/')
+
+app\__init__.py registers the created blueprint with its routes.
+    from app.main import bp as main_bp
+    app.register_blueprint(main_bp)
+
+Notes: 
+- putting 'from app.main import routes' above "bp= BluePrint()" will cause circular import exception.
 ==============================================================
 ==============================================================
 ==============================================================

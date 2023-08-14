@@ -8,6 +8,8 @@ def create_app(config_class=Config):
     # Initialize Flask Extensions (eg: Flask-SQLAlchemy)
 
     # Register Blueprints
+    from app.main import bp as main_bp
+    app.register_blueprint(main_bp)
 
     @app.route("/test")
     def test_page():
