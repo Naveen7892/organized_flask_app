@@ -1,0 +1,25 @@
+https://www.digitalocean.com/community/tutorials/how-to-structure-a-large-flask-application-with-flask-blueprints-and-flask-sqlalchemy
+
+mkdir organized_flask_app
+cd organized_flask_app
+mkdir Resources
+cd Resources
+
+copy con Notes.txt
+
+copy con .gitignore
+	__pycache__
+	.venv
+	db 
+
+pyenv version
+pyenv local 3.10.11
+
+python -m venv .venv
+.venv\Scripts\activate
+
+git init
+git add .
+git commit -m "Initial commit with notes and pyenv set"
+
+==============================================================	
