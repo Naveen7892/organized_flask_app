@@ -67,8 +67,60 @@ imported render_template from flask. and returned rendered index.html
 
 index.html is defined in app\templates\index.html which uses base.html inside with "title block" and "content block"
 
+==============================================================
+Adding SQLAlchemy models to your flask application:
+---------------------------------------------------
+
+- created extensions.py to create SQLAlchemy instance
+- initialized flask extension with db.init_app(app)
+
+
+>> flask shell
+	Python 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)] on win32
+	App: app
+	Instance: D:\Work\Project - Image Detection\organized_flask_app\instance
+	>>> from app.extensions import db
+	>>> print (db)
+	<SQLAlchemy sqlite:///D:\Work\Project - Image Detection\organized_flask_app\instance\organized_flask_app.db>
+==============================================================
+Creating and Interacting with the Post Model:
+---------------------------------------------
+
+- created models folder for defining Post model.
+- used "flask shell" to import post model, create table and seed with random posts
+
+	from app.extensions import db
+	from app.models.post import Post
+	
+	db.drop_all() -- optional
+	db.create_all()
+
+	import random
+	for i in range(0, 10):
+		random_num = random.randrange(1, 1000)
+		post = Post(title=f'Post #{random_num}',
+					content=f'Content #{random_num}')
+		db.session.add(post)
+		print(post)
+		print(post.content)
+		print('--')
+		db.session.commit()
+- updated posts index page to show all the posts created
 
 ==============================================================
-==============================================================
-==============================================================
+Creating and Interacting with the Question Model:
+-------------------------------------------------
+
+- created Question model
+- used "flask shell" to seed questions
+	from app.extensions import db
+	from app.models.question import Question
+	db.create_all()
+
+	q1 = Question(content='Why is the sky blue?', answer='Because... Why not?')
+	q2 = Question(content='What is love?', answer='A portal to the underworld.')
+	db.session.add_all([q1, q2])
+	db.session.commit()
+
+- updated questions index page to show all the questions created, and a form to make POST request to upload question and answer. (but 405 error at this stage)
 ==============================================================

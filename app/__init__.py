@@ -1,11 +1,13 @@
 from flask import Flask
 from config import Config
+from app.extensions import db
 
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
 
     # Initialize Flask Extensions (eg: Flask-SQLAlchemy)
+    db.init_app(app)
 
     # Register Blueprints
     from app.main import bp as main_bp
